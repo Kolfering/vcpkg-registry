@@ -1,0 +1,11 @@
+{
+  "name": "steamworks-sdk",
+  "version-string": "1.59",
+  "description": "Steamworks SDK",
+  "homepage": "https://partner.steamgames.com/",
+  "features": {
+    "appticket": {
+      "description": "Support for SteamEncryptedAppTicket"
+    }
+  }
+}
