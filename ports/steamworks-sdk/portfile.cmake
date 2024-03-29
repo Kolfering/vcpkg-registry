@@ -18,6 +18,8 @@ if(VCPKG_TARGET_IS_WINDOWS)
 		
 	endif()
 	
+	set(STEAMCMD_PATH "${SOURCE_PATH}/tools/ContentBuilder/builder")
+	
 	file(INSTALL "${SDK_DESTINATION_PATH}.lib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
 	file(INSTALL "${SDK_DESTINATION_PATH}.lib" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 	file(INSTALL "${SDK_DESTINATION_PATH}.dll" DESTINATION "${CURRENT_PACKAGES_DIR}/bin")
@@ -32,6 +34,8 @@ if(VCPKG_TARGET_IS_WINDOWS)
 
 elseif(VCPKG_TARGET_IS_OSX)
 
+	set(STEAMCMD_PATH "${SOURCE_PATH}/tools/ContentBuilder/builder_osx")
+	
     file(INSTALL "${SOURCE_PATH}/redistributable_bin/osx/libsteam_api.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
     file(INSTALL "${SOURCE_PATH}/redistributable_bin/osx/libsteam_api.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 	
@@ -42,6 +46,8 @@ elseif(VCPKG_TARGET_IS_OSX)
 	
 elseif(VCPKG_TARGET_IS_LINUX)
 
+	set(STEAMCMD_PATH "${SOURCE_PATH}/tools/ContentBuilder/builder_linux")
+	
     file(INSTALL "${SOURCE_PATH}/redistributable_bin/linux64/libsteam_api.so" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
     file(INSTALL "${SOURCE_PATH}/redistributable_bin/linux64/libsteam_api.so" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 	
@@ -54,5 +60,6 @@ endif()
 
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/Readme.txt")
 
+file(COPY "${STEAMCMD_PATH}" DESTINATION "${CURRENT_PACKAGES_DIR}/tools")
 file(COPY "${SOURCE_PATH}/public/steam" DESTINATION "${CURRENT_PACKAGES_DIR}/include")
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
