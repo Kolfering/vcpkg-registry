@@ -60,6 +60,6 @@ endif()
 
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/Readme.txt")
 
-file(COPY "${STEAMCMD_PATH}" DESTINATION "${CURRENT_PACKAGES_DIR}/tools")
+file(COPY "${STEAMCMD_PATH}/" DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}")
 file(COPY "${SOURCE_PATH}/public/steam" DESTINATION "${CURRENT_PACKAGES_DIR}/include")
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
