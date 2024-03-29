@@ -1,6 +1,7 @@
 {
   "name": "steamworks-sdk",
   "version-string": "1.59",
+  "port-version": 1,
   "description": "Steamworks SDK",
   "homepage": "https://partner.steamgames.com/",
   "features": {
