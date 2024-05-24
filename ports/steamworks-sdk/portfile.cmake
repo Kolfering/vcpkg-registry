@@ -36,11 +36,11 @@ elseif(VCPKG_TARGET_IS_OSX)
 
 	set(STEAMCMD_PATH "${SOURCE_PATH}/tools/ContentBuilder/builder_osx")
 	
-    file(INSTALL "${SOURCE_PATH}/redistributable_bin/osx/libsteam_api.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
-    file(INSTALL "${SOURCE_PATH}/redistributable_bin/osx/libsteam_api.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
+	file(INSTALL "${SOURCE_PATH}/redistributable_bin/osx/libsteam_api.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
+	file(INSTALL "${SOURCE_PATH}/redistributable_bin/osx/libsteam_api.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 	
 	if("appticket" IN_LIST FEATURES)
-	    file(INSTALL "${SOURCE_PATH}/public/steam/lib/osx/libsdkencryptedappticket.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
+		file(INSTALL "${SOURCE_PATH}/public/steam/lib/osx/libsdkencryptedappticket.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
 		file(INSTALL "${SOURCE_PATH}/public/steam/lib/osx/libsdkencryptedappticket.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 	endif()
 	
@@ -48,11 +48,11 @@ elseif(VCPKG_TARGET_IS_LINUX)
 
 	set(STEAMCMD_PATH "${SOURCE_PATH}/tools/ContentBuilder/builder_linux")
 	
-    file(INSTALL "${SOURCE_PATH}/redistributable_bin/linux64/libsteam_api.so" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
-    file(INSTALL "${SOURCE_PATH}/redistributable_bin/linux64/libsteam_api.so" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
+	file(INSTALL "${SOURCE_PATH}/redistributable_bin/linux64/libsteam_api.so" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
+	file(INSTALL "${SOURCE_PATH}/redistributable_bin/linux64/libsteam_api.so" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 	
 	if("appticket" IN_LIST FEATURES)
-	    file(INSTALL "${SOURCE_PATH}/public/steam/lib/linux64/libsdkencryptedappticket.so" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
+		file(INSTALL "${SOURCE_PATH}/public/steam/lib/linux64/libsdkencryptedappticket.so" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
 		file(INSTALL "${SOURCE_PATH}/public/steam/lib/linux64/libsdkencryptedappticket.so" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 	endif()
 	
