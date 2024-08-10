@@ -34,6 +34,7 @@ if(VCPKG_TARGET_IS_WINDOWS)
 
 elseif(VCPKG_TARGET_IS_OSX)
 
+	set(VCPKG_FIXUP_MACHO_RPATH FALSE)
 	set(STEAMCMD_PATH "${SOURCE_PATH}/tools/ContentBuilder/builder_osx")
 	
 	file(INSTALL "${SOURCE_PATH}/redistributable_bin/osx/libsteam_api.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
@@ -46,6 +47,7 @@ elseif(VCPKG_TARGET_IS_OSX)
 	
 elseif(VCPKG_TARGET_IS_LINUX)
 
+	set(VCPKG_FIXUP_ELF_RPATH FALSE)
 	set(STEAMCMD_PATH "${SOURCE_PATH}/tools/ContentBuilder/builder_linux")
 	
 	file(INSTALL "${SOURCE_PATH}/redistributable_bin/linux64/libsteam_api.so" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
