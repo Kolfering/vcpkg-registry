@@ -1,7 +1,11 @@
 set(VCPKG_LIBRARY_LINKAGE dynamic)
 
-vcpkg_extract_source_archive(SOURCE_PATH
-	ARCHIVE "${CMAKE_CURRENT_LIST_DIR}/steamworks_sdk.zip"
+vcpkg_from_github(
+	OUT_SOURCE_PATH SOURCE_PATH
+	REPO rlabrecque/SteamworksSDK
+	REF 34d9338aa892213861bd9f84c4dd9c5b7fd23de7
+	SHA512 11c2b90658760c7ce8446b41341c9eff0fddd24db2aec22dfbb0de37d4e660c330147013efaa1b9ac3df9502e691704346c081ef86de87568e3d008d28407185
+	HEAD_REF master
 )
 
 if(VCPKG_TARGET_IS_WINDOWS)

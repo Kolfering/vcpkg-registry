@@ -1,5 +1,5 @@
 {
   "default": {
-    "steamworks-sdk": { "baseline": "1.60", "port-version": 1 }
+    "steamworks-sdk": { "baseline": "1.62", "port-version": 0 }
   }
 }
